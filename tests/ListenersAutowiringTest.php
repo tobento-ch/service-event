@@ -179,11 +179,11 @@ class ListenersAutowiringTest extends TestCase
         
         $iterator = $listeners->getListenersForEvent(new FooEvent());
         
-        $this->assertCount(2, $iterator);
+        $this->assertSame(2, iterator_count($iterator));
         
         $iterator = $listeners->getListenersForEvent(new BarEvent());
         
-        $this->assertCount(2, $iterator);
+        $this->assertSame(2, iterator_count($iterator));
     }
     
     public function testAddMethodWithMultipleEventsString()
@@ -196,10 +196,10 @@ class ListenersAutowiringTest extends TestCase
         
         $iterator = $listeners->getListenersForEvent(new FooEvent());
         
-        $this->assertCount(2, $iterator);
+        $this->assertSame(2, iterator_count($iterator));
         
         $iterator = $listeners->getListenersForEvent(new BarEvent());
         
-        $this->assertCount(2, $iterator);
+        $this->assertSame(2, iterator_count($iterator));
     }     
 }

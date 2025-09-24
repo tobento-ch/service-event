@@ -190,11 +190,11 @@ class ListenersTest extends TestCase
         
         $iterator = $listeners->getListenersForEvent(new FooEvent());
         
-        $this->assertCount(2, $iterator);
+        $this->assertSame(2, iterator_count($iterator));
         
         $iterator = $listeners->getListenersForEvent(new BarEvent());
         
-        $this->assertCount(2, $iterator);
+        $this->assertSame(2, iterator_count($iterator));
     }
     
     public function testPriority()
@@ -238,11 +238,11 @@ class ListenersTest extends TestCase
         
         $iterator = $listeners->getListenersForEvent(new FooEvent());
         
-        $this->assertCount(2, $iterator);
+        $this->assertSame(2, iterator_count($iterator));
         
         $iterator = $listeners->getListenersForEvent(new BarEvent());
         
-        $this->assertCount(2, $iterator);
+        $this->assertSame(2, iterator_count($iterator));
         
         $listeners = new Listeners();
         
@@ -250,11 +250,11 @@ class ListenersTest extends TestCase
         
         $iterator = $listeners->getListenersForEvent(new FooEvent());
         
-        $this->assertCount(2, $iterator);
+        $this->assertSame(2, iterator_count($iterator));
         
         $iterator = $listeners->getListenersForEvent(new BarEvent());
         
-        $this->assertCount(0, $iterator);        
+        $this->assertSame(0, iterator_count($iterator));
     }     
 }
 
