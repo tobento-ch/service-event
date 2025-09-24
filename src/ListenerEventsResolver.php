@@ -125,10 +125,8 @@ class ListenerEventsResolver implements ListenerEventsResolverInterface
     
     /**
      * Resolves the parameters.
-     * 
-     * @param string $id
+     *
      * @param ReflectionFunctionAbstract $function
-     * @param array<int|string, mixed> $parameters
      * @return array<mixed> The resolved parameters.
      */
     protected function resolveEventClasses(ReflectionFunctionAbstract $function): array
